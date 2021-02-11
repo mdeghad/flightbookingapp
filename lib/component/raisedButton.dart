@@ -1,8 +1,8 @@
 import 'package:flight_booking_app/common/Color.dart';
 import 'package:flutter/material.dart';
 
-class NewButton extends StatelessWidget {
-  NewButton({@required this.onPressed, @required this.title});   //Constructor with parameters
+class RaisedBtn extends StatelessWidget {
+  RaisedBtn({@required this.onPressed, @required this.title});   //Constructor with parameters
 
   final GestureTapCallback onPressed;
   final String title;

@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flight_booking_app/common/Color.dart';
 import 'package:flight_booking_app/common/string.dart';
-import 'package:flight_booking_app/component/newButton.dart';
+import 'package:flight_booking_app/component/raisedButton.dart';
 import 'package:flight_booking_app/screens/create_new_user.dart';
 import 'package:flutter/material.dart';
 
@@ -101,7 +101,7 @@ class SignUpState extends State {
             Row(                                                                //Reuse of customButton
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  NewButton(
+                  RaisedBtn(
                     onPressed: () {
                       Navigator.push(
                           context,

@@ -1,6 +1,6 @@
 import 'package:flight_booking_app/common/Color.dart';
 import 'package:flight_booking_app/common/string.dart';
-import 'package:flight_booking_app/component/newButton.dart';
+import 'package:flight_booking_app/component/raisedButton.dart';
 import 'package:flutter/material.dart';
 
 //Creating class for creation of new account
@@ -69,7 +69,7 @@ class CreateNewUserState extends State {
             ),
 
             SizedBox(height: 30,),
-            NewButton(onPressed: (){}, title: Strings.createuserAccount)
+            RaisedBtn(onPressed: (){}, title: Strings.createuserAccount)
           ],
         ),
       ),
