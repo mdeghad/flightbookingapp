@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//colo
 class NewColors {
   static const  splashscreenColor =Color.fromRGBO(31,31,152, 1);
   static const  buttonColor =Color.fromRGBO(255,112,162, 1);

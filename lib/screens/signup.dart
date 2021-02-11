@@ -1,5 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flight_booking_app/common/newColor.dart';
+import 'package:flight_booking_app/common/Color.dart';
 import 'package:flight_booking_app/common/string.dart';
 import 'package:flight_booking_app/component/newButton.dart';
 import 'package:flight_booking_app/screens/create_new_user.dart';
@@ -9,39 +9,52 @@ class SignUP extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return SignUPState();
+    return SignUpState();
   }
 }
 
-class SignUPState extends State {
+class SignUpState extends State {
+
+  double height;
+  double width;
   CarouselSlider carouselSlider;
   int _current = 0;
-  //adding  images in a list
-  List imgList = [
-    'assets/images/intro1.jpg',
-    'assets/images/intro2.jpg',
-    'assets/images/intro3.jpg',
-  ];
 
+  //looping of images
   List<T> map<T>(List list, Function handler) {
     List<T> result = [];
-    for (var i = 0; i < list.length; i++) {
-      result.add(handler(i, list[i]));
+    try {
+      for (var i = 0; i < list.length; i++) {
+        result.add(handler(i, list[i]));
+      }
+    } catch (e) {
+      throw (e);
     }
     return result;
   }
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+    double height = MediaQuery.of(context).size.height;                    //Orientation Checking
+    final width = MediaQuery.of(context).size.width;
+    try {
+      if (width > 600) {
+        return Slides(height=250);
+      } else {
+        return Slides(height=500);
+      }
+    } catch (e) {}
+  }
+  Widget Slides(height) {
     return Scaffold(
       body: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            carouselSlider = CarouselSlider(   // use of carousel slider properties
-              height: MediaQuery.of(context).size.height/ 2,
+            carouselSlider = CarouselSlider(                            // use of carousel slider properties
+              height:height,
+              aspectRatio: 16 / 9,
               initialPage: 0,
               enableInfiniteScroll: false,
               enlargeCenterPage: true,
@@ -51,22 +64,13 @@ class SignUPState extends State {
                   _current = index;
                 });
               },
-              items: imgList.map((imgUrl) {
+              items: Strings.imgList.map((imgUrl) {                       //setting imageList to carousel itemlist
                 return Builder(
                   builder: (BuildContext context) {
                     return Container(
                       width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height/2,
-                       margin: EdgeInsets.symmetric(horizontal: 10.0),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.rectangle,
-                        image: DecorationImage(
-                          image: AssetImage(         //setting images url to slides
-                            imgUrl,
-                          ),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
+                      margin: EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Image.asset(imgUrl,width:MediaQuery.of(context).size.width,height:MediaQuery.of(context).size.height/2,fit: BoxFit.fill,),
                     );
                   },
                 );
@@ -75,10 +79,9 @@ class SignUPState extends State {
             SizedBox(
               height: 20,
             ),
-            Row(
+            Row(                                                           //Bottom dots for slides
               mainAxisAlignment: MainAxisAlignment.center,
-              //Bottom dots for slides
-              children: map<Widget>(imgList, (index, url) {
+              children: map<Widget>(Strings.imgList, (index, url) {
                 return Container(
                   width: 7.0,
                   height: 7.0,
@@ -95,15 +98,19 @@ class SignUPState extends State {
             SizedBox(
               height: 20.0,
             ),
-            Row(
+            Row(                                                                //Reuse of customButton
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-              NewButton(
-                //Reuse of customButton
-                onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>CreateNewUser()));},
-                title: Strings.signUp,
-              ),
-            ]),
+                  NewButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CreateNewUser()));
+                    },
+                    title: Strings.signUp,
+                  ),
+                ]),
           ],
         ),
       ),
