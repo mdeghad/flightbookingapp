@@ -1,5 +1,6 @@
 import 'package:flight_booking_app/common/Color.dart';
 import 'package:flight_booking_app/common/string.dart';
+import 'package:flight_booking_app/component/customSizedBox.dart';
 import 'package:flight_booking_app/component/flatButton.dart';
 import 'package:flight_booking_app/component/raisedButton.dart';
 import 'package:flutter/material.dart';
@@ -39,12 +40,13 @@ class CreateNewUserState extends State {
       throw (e);
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomPadding: false,
         body: ListView(children: [
-         Padding(
+          Padding(
               padding:
                   EdgeInsets.only(top: 70, bottom: 10, left: 10, right: 10),
               child: new Form(
@@ -87,7 +89,7 @@ class CreateNewUserState extends State {
                       keyboardType: TextInputType.text,
                       validator: (value) {
                         if (value.isEmpty) {
-                          return 'Please enter some text';
+                          return Strings.nameValidation;
                         }
                         return null;
                       },
@@ -102,15 +104,13 @@ class CreateNewUserState extends State {
                     //setting textField and validation
                     subtitle: TextFormField(
                       keyboardType: TextInputType.emailAddress,
-                      validator: validateEmail,
+                      validator:validateEmail,
                       onSaved: (String val) {
                         email = val;
                       },
                       controller: emailController,
-
                       decoration: InputDecoration(
-                        suffixIcon:
-                        Icon(
+                        suffixIcon: Icon(
                           Icons.email,
                           color: NewColors.splashTextColor,
                         ),
@@ -123,7 +123,7 @@ class CreateNewUserState extends State {
                     subtitle: TextFormField(
                       controller: passwordController,
                       keyboardType: TextInputType.emailAddress,
-                      validator: validatePassword,
+                      validator:validatePassword,
                       onSaved: (String val) {
                         password = val;
                       },
@@ -141,16 +141,16 @@ class CreateNewUserState extends State {
                                 ? Icons.visibility
                                 : Icons.visibility_off,
                             semanticLabel: _obscureText
-                                ? 'show password'
-                                : 'hide password',
+                                ? Strings.showPassword
+                                : Strings.hidePassword
                           ),
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 60,
-                  ),
+             SizedBox(
+               height: MediaQuery.of(context).size.height/30,
+             ),
                   Container(
                     width: MediaQuery.of(context).size.width * 1.5,
                     child: RaisedBtn(
@@ -159,9 +159,7 @@ class CreateNewUserState extends State {
                         },
                         title: Strings.signUpButton),
                   ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.12,
-                  ),
+                 CustomSizeBox(),
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                     Text(
                       Strings.alreadyUser,
@@ -174,9 +172,7 @@ class CreateNewUserState extends State {
                       onPressed: () {},
                     ),
                   ]),
-                  SizedBox(
-                    height: 3.0,
-                  ),
+                CustomSizeBox1(),
                   GestureDetector(
                     child: Text(
                       Strings.skip,
@@ -191,41 +187,7 @@ class CreateNewUserState extends State {
         ]));
   }
 
-  //validation for email
-  String validateEmail(String value) {
-    Pattern pattern =
-        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-    RegExp regex = new RegExp(pattern);
-    try {
-      if (!regex.hasMatch(value))
-        return 'Enter Valid Email';
-      else if (value.isEmpty) {
-        return ("Enter Some text");
-      } else {
-        return null;
-      }
-    }catch(e){
-      throw(e);
-    }
-  }
 
-  //validation for password
-  String validatePassword(String value) {
-    String patttern =
-        r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
-    RegExp regExp = new RegExp(patttern);
-    try {
-      if (value.isEmpty) {
-        return "Password is Required";
-      } else if (value.length < 8) {
-        return "Password must minimum eight characters";
-      } else if (!regExp.hasMatch(patttern)) {
-        return "Password at least one uppercase letter\n one lowercase letter and one number \n at least one character";
-      } else {
-        return null;
-      }
-    } catch (e) {
-      throw (e);
-    }
-  }
+
+
 }
