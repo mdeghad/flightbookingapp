@@ -52,7 +52,8 @@ class SignUpState extends State {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            carouselSlider = CarouselSlider(                            // use of carousel slider properties
+            carouselSlider = CarouselSlider(
+              // use of carousel slider properties
               height:height,
               aspectRatio: 16 / 9,
               initialPage: 0,
@@ -64,7 +65,8 @@ class SignUpState extends State {
                   _current = index;
                 });
               },
-              items: Strings.imgList.map((imgUrl) {                       //setting imageList to carousel itemlist
+              items: Strings.imgList.map((imgUrl) {
+                //setting imageList to carousel itemlist
                 return Builder(
                   builder: (BuildContext context) {
                     return Container(
@@ -79,7 +81,8 @@ class SignUpState extends State {
             SizedBox(
               height: 20,
             ),
-            Row(                                                           //Bottom dots for slides
+            Row(
+              //Bottom dots for slides
               mainAxisAlignment: MainAxisAlignment.center,
               children: map<Widget>(Strings.imgList, (index, url) {
                 return Container(
@@ -98,7 +101,8 @@ class SignUpState extends State {
             SizedBox(
               height: 20.0,
             ),
-            Row(                                                                //Reuse of customButton
+            Row(
+              //Reuse of customButton
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   RaisedBtn(

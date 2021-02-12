@@ -18,7 +18,8 @@ class SplashScreenState extends State {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(                                                      //setting of duration for splash
+    Timer(
+      //setting of duration for splash
         Duration(seconds: 10),
         () => Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => SignUP())));
@@ -37,7 +38,8 @@ class SplashScreenState extends State {
                 child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(                                //setting image for splash
+                Image.asset(
+                  //setting image for splash
                   Strings.logoImage,
                   width: 110,
                   height: 110,
@@ -46,7 +48,8 @@ class SplashScreenState extends State {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      Strings.splshscreenText1,                 //setting text for splash
+                      Strings.splshscreenText1,
+                      //setting text for splash
                       style: TextStyle(
                           fontSize: 35,
                           color: NewColors.White,
@@ -54,7 +57,8 @@ class SplashScreenState extends State {
                     ),
                     SizedBox(width: 10),
                     Text(
-                      Strings.splshscreenText2,                      //setting text for splash
+                      Strings.splshscreenText2,
+                      //setting text for splash
                       style: TextStyle(
                           fontSize: 35,
                           color: NewColors.splashTextColor,

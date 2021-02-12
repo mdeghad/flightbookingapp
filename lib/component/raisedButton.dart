@@ -1,15 +1,18 @@
 import 'package:flight_booking_app/common/Color.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class RaisedBtn extends StatelessWidget {
-  RaisedBtn({@required this.onPressed, @required this.title});   //Constructor with parameters
+  //Constructor with parameters
+  RaisedBtn({@required this.onPressed, @required this.title});
 
   final GestureTapCallback onPressed;
   final String title;
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(                                           // returning of button
+    // returning of button
+    return RaisedButton(
       color: NewColors.buttonColor,
       child: Container(
 
