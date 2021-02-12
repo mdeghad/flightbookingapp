@@ -3,6 +3,7 @@ import 'package:flight_booking_app/common/string.dart';
 import 'package:flight_booking_app/component/customSizedBox.dart';
 import 'package:flight_booking_app/component/flatButton.dart';
 import 'package:flight_booking_app/component/raisedButton.dart';
+import 'package:flight_booking_app/screens/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -156,6 +157,7 @@ class CreateNewUserState extends State {
                     child: RaisedBtn(
                         onPressed: () {
                           _validateInputs();
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn()));
                         },
                         title: Strings.signUpButton),
                   ),

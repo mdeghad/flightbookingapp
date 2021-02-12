@@ -1,4 +1,5 @@
 import 'package:flight_booking_app/common/Color.dart';
+import 'package:flight_booking_app/common/string.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -29,3 +30,5 @@ class RaisedBtn extends StatelessWidget {
     );
   }
 }
+
+

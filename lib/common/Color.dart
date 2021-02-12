@@ -9,5 +9,6 @@ class NewColors {
   static const dotlightWhite=Color.fromRGBO(192,192,192, 1);
   static const textBlack=Color.fromRGBO(73,62,62, 1);
   static const signUPSUer=Color.fromRGBO(213,213,213, 1);
+  static const loginPageColor=Color.fromRGBO(218,218,218 ,1);
 
 }

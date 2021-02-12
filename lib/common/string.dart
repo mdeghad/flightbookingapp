@@ -6,7 +6,7 @@ class Strings {
   static const signUp = "START BOOKING";
   static const splshscreenText1 = "navana";
   static const splshscreenText2 = "air";
-  static const signUpButton = "SIGN UP";
+  static const signUpButton = "Sign Up";
   static const createuserName = "Name";
   static const createuserEmail = "Email";
   static const createuserPassword = "Password";
@@ -16,7 +16,13 @@ class Strings {
   static const showPassword="show password";
   static const hidePassword="hide password";
   static const nameValidation="Please enter some text";
+  static const login="Login";
+  static const newUser="Don't have account?";
   static const logoImage = "assets/images/splashimg.png";
+  static const google = "assets/images/google.png";
+  static const fb = "assets/images/fblogo.png";
+  static const loginWith="Login with";
+  static const frpassword="Forgot Password?";
   static const List imgList = [
     'assets/images/intro1.jpg',
     'assets/images/intro2.jpg',
