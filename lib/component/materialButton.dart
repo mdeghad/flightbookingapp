@@ -17,9 +17,9 @@ class MaterailBtn extends StatelessWidget {
 
       child: Container(
 
-        //width: MediaQuery.of(context).size.width * 0.55,
-        padding: EdgeInsets.all(18.0),
-        child: Image.asset(image,width: 40,height: 40,),
+        width: MediaQuery.of(context).size.width * 0.18,
+        padding: EdgeInsets.all(10.0),
+        child: Image.asset(image),
 
       ),
 

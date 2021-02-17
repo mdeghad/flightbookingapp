@@ -10,5 +10,9 @@ class NewColors {
   static const textBlack=Color.fromRGBO(73,62,62, 1);
   static const signUPSUer=Color.fromRGBO(213,213,213, 1);
   static const loginPageColor=Color.fromRGBO(218,218,218 ,1);
-
+  static const flightcolor=Color.fromRGBO(245,88,109, 1);
+  static const hotlcolor=Color.fromRGBO(87,207,37, 1);
+  static const carcolor=Color.fromRGBO(111,78,232, 1);
+  static const restcolor=Color.fromRGBO(225,80,227, 1);
+  static const guidecolor=Color.fromRGBO(80,227,212, 1);
 }

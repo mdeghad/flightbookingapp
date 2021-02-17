@@ -18,16 +18,42 @@ class Strings {
   static const nameValidation="Please enter some text";
   static const login="Login";
   static const newUser="Don't have account?";
-  static const logoImage = "assets/images/splashimg.png";
-  static const google = "assets/images/google.png";
-  static const fb = "assets/images/fblogo.png";
   static const loginWith="Login with";
   static const frpassword="Forgot Password?";
+  static const flight="Flight";
+  static const hotle="Hotel";
+  static const car="Car";
+  static const rest="Restaurunt";
+  static const guid="Guide";
+  static const Home="Home";
+  static const BestOff="Best Offers";
+  static const viewall="View All";
+  static const Recom="Recommended Places";
+  static const pop="Popular Places";
+  static const thai="Thailand";
+  static const paris="Paris";
+  static const france="France";
+  static const bank ="Bangkok";
+  static const explore ="Explore";
+  static const search ="Search";
+  static const profile ="Profile";
+  static const dollar ="from \$490 USD";
+  static const dollar1 ="from \$590 USD";
+  static const dollar2 ="from \$690 USD";
+  static const firstPageImage="assets/images/wm.jpg";
+  static const logo="assets/images/logo.png";
+  static const image1="assets/images/image1.jpg";
+  static const image2="assets/images/image2.jpg";
+  static const image3="assets/images/image1.jpg";
+  static const image4="assets/images/parisim.jpg";
   static const List imgList = [
     'assets/images/intro1.jpg',
     'assets/images/intro2.jpg',
     'assets/images/intro3.jpg',
   ];
+  static const logoImage = "assets/images/splashimg.png";
+  static const google = "assets/images/google.png";
+  static const fb = "assets/images/fblogo.png";
 }
 
 //validation for email

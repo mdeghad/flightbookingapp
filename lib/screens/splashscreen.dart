@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flight_booking_app/common/Color.dart';
 import 'package:flight_booking_app/common/string.dart';
 import 'package:flight_booking_app/screens/signup.dart';
@@ -14,6 +15,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class SplashScreenState extends State {
+
   //To set duration and navigation
   void initState() {
     // TODO: implement initState
